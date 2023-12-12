@@ -57,6 +57,21 @@ setVisible(true);
 }
 class Test2
 {
+
+
+    public static boolean checksum(int a[][]){
+    if (a[0][0]+a[1][1]+a[2][2] == 3)return true;
+    else if(a[2][0]+a[1][1]+a[0][2] == 3)return true;
+    for(int i = 0;i<3;i++){int sum = 0;int sum1 = 0;
+        for(int j = 0;j<3;j++){
+            if(a[i][j] == 1)sum++;
+            if(a[j][i] == 1)sum1++;
+        }if(sum == 3)return true;
+        if(sum1 == 3)return true;
+    }
+    return false;
+}
+
 public static void main(String[]args)
 {
  new Simple();
