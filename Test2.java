@@ -247,8 +247,40 @@ else if(info.getSource() == b9 && bstate[2][2] == false){
         move++;
     }
 }
+game_status();
 }
 
+//check game status
+void game_status(){
+    if(current_player == true){
+        if(checksum(playerA) == true){
+          new gameover(1);
+        }
+    }
+    else{
+        if(checksum(playerB) == true){
+        new gameover(2);
+        }
+    }
+    if(move == 9){
+      new gameover(3);
+    }
+}
+
+
+//checksum function
+public static boolean checksum(int a[][]){
+    if (a[0][0]+a[1][1]+a[2][2] == 3)return true;
+    else if(a[2][0]+a[1][1]+a[0][2] == 3)return true;
+    for(int i = 0;i<3;i++){int sum = 0;int sum1 = 0;
+        for(int j = 0;j<3;j++){
+            if(a[i][j] == 1)sum++;
+            if(a[j][i] == 1)sum1++;
+        }if(sum == 3)return true;
+        if(sum1 == 3)return true;
+    }
+    return false;
+}
 }
 
 
