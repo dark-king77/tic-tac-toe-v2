@@ -311,6 +311,15 @@ class gameover extends JFrame
   int x;
   gameover(int x)
   {
+
+    //adding program termination snippet on JFrame windowclosing
+    addWindowListener(new WindowAdapter() {
+    public void windowClosing(WindowEvent e) {
+    System.exit(0);
+    }
+    }
+    );
+    
     this.x=x;
     if(x==1)
     {
