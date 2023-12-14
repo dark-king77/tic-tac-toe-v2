@@ -307,7 +307,6 @@ class gameover extends JFrame
   
   JLabel l2=new JLabel("PLAYER B WON!");
   
-  private ImageIcon img;
   int x;
   gameover(int x)
   {
