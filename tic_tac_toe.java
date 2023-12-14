@@ -19,6 +19,7 @@ class Gui extends JFrame implements ActionListener{
     //for the Nine cells in the game nine buttons(b1,b2,b3,b4,b5,b6,b7,b8,b9) are used and are declared as class members as they can be used out side the constructor which defines the frame properties and initializes buttons also
     //and two buttons A and B are declared to set the player role with the help of lable1 and lable2
     //move is uses to track number of moves made by both players together
+    //at_nineth_move -> keeps tract that whether the player won at 9th move(at_nineth_move==false->playerA or B won)
     boolean current_player = false;
     int playerA[][] = {{0,0,0},{0,0,0},{0,0,0}};
     int playerB[][] = {{0,0,0},{0,0,0},{0,0,0}};
@@ -27,6 +28,7 @@ class Gui extends JFrame implements ActionListener{
     JLabel label1,lab1,lab2;
     JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,A,B;
     int move;
+    boolean at_nineth_move=false;
 
     Gui(){
     //setting the JFrame properties
@@ -257,16 +259,18 @@ game_status();
 //check game status
 void game_status(){
     if(current_player == true){
+        at_nineth_move=true;
         if(checksum(playerA) == true){
           new gameover(1);
         }
     }
     else{
+        at_nineth_move=true;
         if(checksum(playerB) == true){
         new gameover(2);
         }
     }
-    if(move == 9){
+    if(move == 9 && at_nineth_move==false){
       new gameover(3);
     }
 }
