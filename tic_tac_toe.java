@@ -8,7 +8,7 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.ImageIcon;
 //creating a JFrame class to create a gui
-class Tic_Tac_Toe extends JFrame implements ActionListener{ 
+class Gui extends JFrame implements ActionListener{ 
     //declaring class members to keep track of the game status
     //current_player -> keep tracks the current player takig the turn (false = palyerA)(true = playerB)
     //playerA matrix of dimension 3X3 represents the boxes filled by X where (0 = x is not there)(1 = x is places in the position)
@@ -28,7 +28,7 @@ class Tic_Tac_Toe extends JFrame implements ActionListener{
     JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,A,B;
     int move;
 
-    Tic_Tac_Toe(){
+    Gui(){
     //setting the JFrame properties
     setLayout(null);
     setSize(2000,2000);
@@ -292,7 +292,7 @@ class tic_tac_toe
 {
 public static void main(String[]args)
 {
- new Tic_Tac_Toe();
+ new Gui();
 }
 }
 
