@@ -259,14 +259,14 @@ game_status();
 //check game status
 void game_status(){
     if(current_player == true){
-        at_nineth_move=true;
         if(checksum(playerA) == true){
+          at_nineth_move=true;
           new gameover(1);
         }
     }
     else{
-        at_nineth_move=true;
         if(checksum(playerB) == true){
+        at_nineth_move=true;
         new gameover(2);
         }
     }
