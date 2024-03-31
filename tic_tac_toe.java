@@ -8,13 +8,15 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.ImageIcon;
 
-
 //the main class that invoks the game arena.
-class tic_tac_toe
+public class tic_tac_toe
 {
 public static void main(String[]args)
 {
- new Gui();
+ Gui playerA = new Gui(0);
+ Gui playerB = new Gui(1);
+ playerA.get_opponent(playerB);
+ playerB.get_opponent(playerA);
 }
 }
 

@@ -5,7 +5,7 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.ImageIcon;
 
-class Gui extends JFrame implements ActionListener{
+public class Gui extends JFrame implements ActionListener{
     //declaring class members to keep track of the game status
     //current_player -> keep tracks the current player takig the turn (false = palyerA)(true = playerB)
     //playerA matrix of dimension 3X3 represents the boxes filled by X where (0 = x is not there)(1 = x is places in the position)
@@ -21,6 +21,7 @@ class Gui extends JFrame implements ActionListener{
     int playerA[][] = {{0,0,0},{0,0,0},{0,0,0}};
     int playerB[][] = {{0,0,0},{0,0,0},{0,0,0}};
     private boolean bstate[][] = {{false,false,false},{false,false,false},{false,false,false}};
+    private ImageIcon image;
     private ImageIcon ximage,oimage;
     JLabel label1,lab1,lab2;
     JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,A,B;
@@ -30,7 +31,13 @@ class Gui extends JFrame implements ActionListener{
     //opponent class object
     private Gui opponent;
 
-    Gui(int a){
+    public Gui(int player){
+        if(player == 0){
+            image = new ImageIcon("ticx.png");
+        }
+        else{
+            image = new ImageIcon("tico.png");
+        }
     //setting the JFrame properties
     setLayout(null);
     setSize(2000,2000);
@@ -115,8 +122,7 @@ class Gui extends JFrame implements ActionListener{
     //setting frame visibility
     setVisible(true);
     }
-    //adding actionPerformed function to implement game logic
-    //checking for button equality and player state to update game interface
+    
     public void actionPerformed(ActionEvent info){
 if(info.getSource() == b1 && bstate[0][0] == false){
     bstate[0][0] = true;
