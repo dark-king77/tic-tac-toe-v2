@@ -5,7 +5,7 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.ImageIcon;
 
-class Gui extends JFrame implements ActionListener{ 
+class Gui extends JFrame implements ActionListener{
     //declaring class members to keep track of the game status
     //current_player -> keep tracks the current player takig the turn (false = palyerA)(true = playerB)
     //playerA matrix of dimension 3X3 represents the boxes filled by X where (0 = x is not there)(1 = x is places in the position)
@@ -27,7 +27,10 @@ class Gui extends JFrame implements ActionListener{
     int move;
     boolean at_nineth_move=false;
 
-    Gui(){
+    //opponent class object
+    private Gui opponent;
+
+    Gui(int a){
     //setting the JFrame properties
     setLayout(null);
     setSize(2000,2000);
@@ -285,5 +288,9 @@ public static boolean checksum(int a[][]){
         if(sum1 == 3)return true;
     }
     return false;
+}
+
+public void get_opponent(Gui opponent){
+    this.opponent = opponent;
 }
 }
