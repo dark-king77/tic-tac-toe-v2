@@ -1,4 +1,10 @@
 //creating a JFrame class to create a gui
+
+import java.awt.event.*;
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.ImageIcon;
+
 class Gui extends JFrame implements ActionListener{ 
     //declaring class members to keep track of the game status
     //current_player -> keep tracks the current player takig the turn (false = palyerA)(true = playerB)
