@@ -124,6 +124,12 @@ public class Gui extends JFrame implements ActionListener{
     }
     
     public void actionPerformed(ActionEvent info){
+        if(info.getSource()==b1 && bstate[0][0]==false){
+            bstate[0][0]=true;
+            b1.setIcon(image);
+            move++;
+
+        }
 
         //
         //
