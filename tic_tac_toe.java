@@ -13,10 +13,7 @@ public class tic_tac_toe
 {
 public static void main(String[]args)
 {
- Gui playerA = new Gui(0);
- Gui playerB = new Gui(1);
- playerA.get_opponent(playerB);
- playerB.get_opponent(playerA);
+    new startmenu();
 }
 }
 

@@ -34,64 +34,66 @@ public class Gui extends JFrame implements ActionListener{
     public Gui(int player){
         if(player == 0){
             image = new ImageIcon("ticx.png");
+            setBounds(0,0,0,0);
         }
         else{
             image = new ImageIcon("tico.png");
+            setBounds(780,0,800,2000);
         }
     //setting the JFrame properties
     setLayout(null);
-    setSize(2000,2000);
+    setSize(800,2000);
 
     //defining the constructor for the class to create and display the Jframe and initialize the buttons
     //setting up the title
     JLabel l=new JLabel("TIC TAC TOE");
-    l.setBounds(600,50,190,50);
+    l.setBounds(500,50,190,50);
     Font lf=new Font("Verdana",Font.PLAIN,28);
     l.setFont(lf);
     add(l);
 
     //initializing the buttons and adding actio listener
     b1=new JButton();
-    b1.setBounds(450,200,150,150);
+    b1.setBounds(300,200,150,150);
     b1.addActionListener(this);
     b2=new JButton();
-    b2.setBounds(600,200,150,150);
+    b2.setBounds(450,200,150,150);
     b2.addActionListener(this);
     b3=new JButton();
-    b3.setBounds(750,200,150,150);
+    b3.setBounds(600,200,150,150);
     b3.addActionListener(this);
     b4=new JButton();
-    b4.setBounds(450,350,150,150);
+    b4.setBounds(300,350,150,150);
     b4.addActionListener(this);
     b5=new JButton();
-    b5.setBounds(600,350,150,150);
+    b5.setBounds(450,350,150,150);
     b5.addActionListener(this);
     b6=new JButton();
-    b6.setBounds(750,350,150,150);
+    b6.setBounds(600,350,150,150);
     b6.addActionListener(this);
     b7=new JButton();
-    b7.setBounds(450,500,150,150);
+    b7.setBounds(300,500,150,150);
     b7.addActionListener(this);
     b8=new JButton();
-    b8.setBounds(600,500,150,150);
+    b8.setBounds(450,500,150,150);
     b8.addActionListener(this);
     b9=new JButton();
-    b9.setBounds(750,500,150,150);
+    b9.setBounds(600,500,150,150);
     b9.addActionListener(this);
 
     //setting game roles
     A=new JButton();
-    A.setBounds(200,200,100,100);
+    A.setBounds(100,200,100,100);
     A.setIcon(new ImageIcon("ticx1.png"));
     add(A);
     B=new JButton();
-    B.setBounds(200,400,100,100);
+    B.setBounds(100,400,100,100);
     B.setIcon(new ImageIcon("tico1.png"));
     add(B);
     lab1=new JLabel("A");
     lab2=new JLabel("B");
-    lab1.setBounds(240,150,50,50);
-    lab2.setBounds(240,350,50,50);
+    lab1.setBounds(140,150,50,50);
+    lab2.setBounds(140,350,50,50);
     add(lab1);
     add(lab2);
 
