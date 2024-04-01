@@ -15,7 +15,6 @@ public class startmenu
         frame.setTitle("Game Launcher");
         frame.setSize(900, 900);
         frame.setLayout(null);
-        frame.setBackground(Color.BLUE);
         //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         startButton = new Button("Start Game");
