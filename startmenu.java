@@ -39,6 +39,7 @@ public class startmenu extends JFrame implements ActionListener
         Gui playerB = new Gui(1);
         playerA.get_opponent(playerB);
         playerB.get_opponent(playerA);
+        playerA.current_player = true;
     }
    
 }
