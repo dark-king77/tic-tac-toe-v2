@@ -18,6 +18,7 @@ public class Gui extends JFrame implements ActionListener{
     //move is uses to track number of moves made by both players together
     //at_nineth_move -> keeps tract that whether the player won at 9th move(at_nineth_move==false->playerA or B won)
     public boolean current_player = false;
+    public int player_number;
     int player[][] = {{0,0,0},{0,0,0},{0,0,0}};
     public boolean bstate[][] = {{false,false,false},{false,false,false},{false,false,false}};
     public ImageIcon image;
@@ -31,6 +32,7 @@ public class Gui extends JFrame implements ActionListener{
     private Gui opponent;
 
     public Gui(int player){
+        player_number=player;
         if(player == 0){
             image = new ImageIcon("ticx.png");
             setBounds(0,0,0,0);
@@ -235,6 +237,10 @@ game_status();
 
 //check game status
 void game_status(){
+    if(checksum(player[][])==true)
+    {
+        new gameover(player_number);
+    }
     if(move == 9 && at_nineth_move==false){
       new gameover(3);
     }

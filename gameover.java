@@ -27,7 +27,7 @@ class gameover extends JFrame
     );
     
     this.x=x;
-    if(x==1)
+    if(x==0)
     {
       l1.setBounds(150,300,400,50);
       Font lf=new Font("verdana",Font.PLAIN,25);
@@ -37,7 +37,7 @@ class gameover extends JFrame
       add(b);
       add(l1);
     }
-    else if(x==2)
+    else if(x==1)
     {
       l2.setBounds(150,300,400,50);
       Font lf=new Font("verdana",Font.PLAIN,25);
