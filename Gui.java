@@ -17,16 +17,15 @@ public class Gui extends JFrame implements ActionListener{
     //and two buttons A and B are declared to set the player role with the help of lable1 and lable2
     //move is uses to track number of moves made by both players together
     //at_nineth_move -> keeps tract that whether the player won at 9th move(at_nineth_move==false->playerA or B won)
-    boolean current_player = false;
-    int playerA[][] = {{0,0,0},{0,0,0},{0,0,0}};
-    int playerB[][] = {{0,0,0},{0,0,0},{0,0,0}};
-    private boolean bstate[][] = {{false,false,false},{false,false,false},{false,false,false}};
+    public boolean current_player = false;
+    int player[][] = {{0,0,0},{0,0,0},{0,0,0}};
+    public boolean bstate[][] = {{false,false,false},{false,false,false},{false,false,false}};
     private ImageIcon image;
     private ImageIcon ximage,oimage;
     JLabel label1,lab1,lab2;
-    JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,A,B;
-    int move;
-    boolean at_nineth_move=false;
+    public JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,A,B;
+    public int move;
+    public boolean at_nineth_move=false;
 
     //opponent class object
     private Gui opponent;
@@ -130,11 +129,25 @@ public class Gui extends JFrame implements ActionListener{
     }
     
     public void actionPerformed(ActionEvent info){
-        if(info.getSource()==b1 && bstate[0][0]==false){
+        if(info.getSource()==b1 && bstate[0][0]==false && current_player==true){
+            current_player=false;
+            opponent.current_player=true;
             bstate[0][0]=true;
+            opponent.bstate[0][0]=true;
             b1.setIcon(image);
+            opponent.b1.setIcon(image);
             move++;
-
+            opponent.move++;
+        }
+        else if(info.getSource()==b2 && bstate[0][1]==false && current_player==true){
+            current_player=false;
+            opponent.current_player=true;
+            bstate[0][1]=true;
+            opponent.bstate[0][1]=true;
+            b2.setIcon(image);
+            opponent.b2.setIcon(image);
+            move++;
+            opponent.move++;
         }
 
         //
