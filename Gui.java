@@ -94,10 +94,10 @@ public class Gui extends JFrame implements ActionListener{
     else{
     lab2=new JLabel("B");    
     B=new JButton();
-    B.setBounds(100,400,100,100);
+    B.setBounds(100,200,100,100);
     B.setIcon(new ImageIcon("tico1.png"));
     add(B);
-    lab2.setBounds(140,350,50,50);
+    lab2.setBounds(140,150,50,50);
     add(lab2);
     }
     
