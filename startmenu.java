@@ -9,7 +9,7 @@ public class startmenu extends JFrame implements ActionListener
     private JButton startButton;
     private JButton musicButton;
 
-    public Game() {
+    public startmenu() {
         setTitle("Game Launcher");
         setSize(1000, 1000);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
