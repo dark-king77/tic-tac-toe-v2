@@ -140,6 +140,7 @@ public class Gui extends JFrame implements ActionListener{
             opponent.b1.setIcon(image);
             move++;
             opponent.move++;
+            player[0][0] = 1;
         }
         else if(info.getSource()==b2 && bstate[0][1]==false && current_player==true){
             current_player=false;
@@ -150,6 +151,7 @@ public class Gui extends JFrame implements ActionListener{
             opponent.b2.setIcon(image);
             move++;
             opponent.move++;
+            player[0][1] = 1;
         }
         else if(info.getSource()==b3 && bstate[0][2]==false && current_player==true){
             current_player=false;
@@ -160,6 +162,7 @@ public class Gui extends JFrame implements ActionListener{
             opponent.b3.setIcon(image);
             move++;
             opponent.move++;
+            player[0][2] = 1;
         }
         else if(info.getSource()==b4 && bstate[1][0]==false && current_player==true){
             current_player=false;
@@ -170,6 +173,7 @@ public class Gui extends JFrame implements ActionListener{
             opponent.b4.setIcon(image);
             move++;
             opponent.move++;
+            player[1][0] = 1;
         }
         else if(info.getSource()==b5 && bstate[1][1]==false && current_player==true){
             current_player=false;
@@ -180,6 +184,7 @@ public class Gui extends JFrame implements ActionListener{
             opponent.b5.setIcon(image);
             move++;
             opponent.move++;
+            player[1][1] = 1;
         }
         else if(info.getSource()==b6 && bstate[1][2]==false && current_player==true){
             current_player=false;
@@ -190,6 +195,7 @@ public class Gui extends JFrame implements ActionListener{
             opponent.b6.setIcon(image);
             move++;
             opponent.move++;
+            player[1][2] = 1;
         }
         else if(info.getSource()==b7 && bstate[2][0]==false && current_player==true){
             current_player=false;
@@ -200,6 +206,7 @@ public class Gui extends JFrame implements ActionListener{
             opponent.b7.setIcon(image);
             move++;
             opponent.move++;
+            player[2][0] = 1;
         }
         else if(info.getSource()==b8 && bstate[2][1]==false && current_player==true){
             current_player=false;
@@ -210,6 +217,7 @@ public class Gui extends JFrame implements ActionListener{
             opponent.b8.setIcon(image);
             move++;
             opponent.move++;
+            player[2][1] = 1;
         }
         else if(info.getSource()==b9 && bstate[2][2]==false && current_player==true){
             current_player=false;
@@ -220,6 +228,7 @@ public class Gui extends JFrame implements ActionListener{
             opponent.b9.setIcon(image);
             move++;
             opponent.move++;
+            player[2][2] = 1;
         }
 
 
