@@ -237,7 +237,7 @@ game_status();
 
 //check game status
 void game_status(){
-    if(checksum(player[][])==true)
+    if(checksum(player)==true)
     {
         new gameover(player_number);
     }
