@@ -82,21 +82,25 @@ public class Gui extends JFrame implements ActionListener{
     b9.addActionListener(this);
 
     //setting game roles
+    if(player==0){
+    lab1=new JLabel("A");    
     A=new JButton();
     A.setBounds(100,200,100,100);
     A.setIcon(new ImageIcon("ticx1.png"));
+    lab1.setBounds(140,150,50,50);
+    add(lab1);
     add(A);
+    }
+    else{
+    lab2=new JLabel("B");    
     B=new JButton();
     B.setBounds(100,400,100,100);
     B.setIcon(new ImageIcon("tico1.png"));
     add(B);
-    lab1=new JLabel("A");
-    lab2=new JLabel("B");
-    lab1.setBounds(140,150,50,50);
     lab2.setBounds(140,350,50,50);
-    add(lab1);
     add(lab2);
-
+    }
+    
     //initializing image objects
     ximage=new ImageIcon("ticx.png");
     oimage=new ImageIcon("tico.png");
