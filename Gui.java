@@ -149,6 +149,83 @@ public class Gui extends JFrame implements ActionListener{
             move++;
             opponent.move++;
         }
+        else if(info.getSource()==b3 && bstate[0][2]==false && current_player==true){
+            current_player=false;
+            opponent.current_player=true;
+            bstate[0][2]=true;
+            opponent.bstate[0][2]=true;
+            b3.setIcon(image);
+            opponent.b3.setIcon(image);
+            move++;
+            opponent.move++;
+        }
+        else if(info.getSource()==b4 && bstate[1][0]==false && current_player==true){
+            current_player=false;
+            opponent.current_player=true;
+            bstate[1][0]=true;
+            opponent.bstate[1][0]=true;
+            b4.setIcon(image);
+            opponent.b4.setIcon(image);
+            move++;
+            opponent.move++;
+        }
+        else if(info.getSource()==b5 && bstate[1][1]==false && current_player==true){
+            current_player=false;
+            opponent.current_player=true;
+            bstate[1][1]=true;
+            opponent.bstate[1][1]=true;
+            b5.setIcon(image);
+            opponent.b5.setIcon(image);
+            move++;
+            opponent.move++;
+        }
+        else if(info.getSource()==b6 && bstate[1][2]==false && current_player==true){
+            current_player=false;
+            opponent.current_player=true;
+            bstate[1][2]=true;
+            opponent.bstate[1][2]=true;
+            b6.setIcon(image);
+            opponent.b6.setIcon(image);
+            move++;
+            opponent.move++;
+        }
+        else if(info.getSource()==b7 && bstate[2][0]==false && current_player==true){
+            current_player=false;
+            opponent.current_player=true;
+            bstate[2][0]=true;
+            opponent.bstate[2][0]=true;
+            b7.setIcon(image);
+            opponent.b7.setIcon(image);
+            move++;
+            opponent.move++;
+        }
+        else if(info.getSource()==b8 && bstate[2][1]==false && current_player==true){
+            current_player=false;
+            opponent.current_player=true;
+            bstate[2][1]=true;
+            opponent.bstate[2][1]=true;
+            b8.setIcon(image);
+            opponent.b8.setIcon(image);
+            move++;
+            opponent.move++;
+        }
+        else if(info.getSource()==b9 && bstate[2][2]==false && current_player==true){
+            current_player=false;
+            opponent.current_player=true;
+            bstate[2][2]=true;
+            opponent.bstate[2][2]=true;
+            b9.setIcon(image);
+            opponent.b9.setIcon(image);
+            move++;
+            opponent.move++;
+        }
+
+
+
+
+
+
+
 
         //
         //
