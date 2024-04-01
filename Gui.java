@@ -235,18 +235,6 @@ game_status();
 
 //check game status
 void game_status(){
-    if(current_player == true){
-        if(checksum(playerA) == true){
-          at_nineth_move=true;
-          new gameover(1);
-        }
-    }
-    else{
-        if(checksum(playerB) == true){
-        at_nineth_move=true;
-        new gameover(2);
-        }
-    }
     if(move == 9 && at_nineth_move==false){
       new gameover(3);
     }
