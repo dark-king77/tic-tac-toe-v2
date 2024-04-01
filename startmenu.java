@@ -4,34 +4,46 @@ import java.awt.event.*;
 
 //import java.awt.event;
 
-public class startmenu extends JFrame implements ActionListener
+public class startmenu 
 {
-    private JButton startButton;
-    private JButton musicButton;
+    private Button startButton;
+    //private Button musicButton;
+    private Frame frame;
 
     public startmenu() {
-        setTitle("Game Launcher");
-        setSize(1000, 1000);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame=new Frame("home");
+        frame.setTitle("Game Launcher");
+        frame.setSize(900, 900);
+        frame.setLayout(null);
+        frame.setBackground(Color.BLUE);
+        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        startButton = new JButton("Start Game");
-        startButton.setBounds(800,850,250,150);
-        startButton.addActionListener(this);
+        startButton = new Button("Start Game");
+        startButton.setBounds(400,450,150,50);
+        //startButton.addActionListener(this);
 
-        musicButton = new JButton("Toggle Music");
+       // musicButton = new JButton("Toggle Music");
         //musicButton.addActionListener(this);
 
-        JPanel panel = new JPanel();
-        panel.add(startButton);
-        panel.add(musicButton);
-
-        add(panel);
-        setVisible(true);
-    }
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == startButton) {
-            startgame();
-        }
+        
+        frame.add(startButton);
+        //frame.add(musicButton);
+        startButton.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+                startgame();
+            }
+        });
+        frame.addWindowListener(new WindowAdapter()
+        {
+            public void windowClosing(WindowEvent e)
+            {
+                frame.dispose();
+                System.exit(0);
+            }
+        });
+        frame.setVisible(true);
     }
 
     public void startgame(){
