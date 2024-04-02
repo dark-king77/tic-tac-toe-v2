@@ -21,12 +21,12 @@ public class startmenu
     {
         frame=new Frame("home");
         frame.setTitle("Game Launcher");
-        frame.setSize(900, 900);
+        frame.setSize(1600, 900);
         frame.setLayout(null);
         //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         startButton = new Button("START");
-        startButton.setBounds(400,450,150,50);
+        startButton.setBounds(700,380,200,100);
         /*text = new TextField();
         text.setBounds(310,350,300,40);
         text.setFont(new Font("Arial", Font.PLAIN, 24));
