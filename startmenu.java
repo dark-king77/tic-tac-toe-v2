@@ -58,8 +58,9 @@ public class startmenu
                 System.exit(0);
             }
         });
-        Color lavender = new Color(230, 200, 250);
-        frame.setBackground(lavender);
+       // Color lavender = new Color(230, 200, 250);
+       
+        frame.setBackground(Color.CYAN);
         frame.setVisible(true);
 
         playBackgroundMusic("bg music.wav");
