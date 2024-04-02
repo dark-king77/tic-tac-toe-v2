@@ -54,6 +54,7 @@ public class Gui extends JFrame implements ActionListener{
     Font lf=new Font("Forte",Font.PLAIN,42);
     l.setFont(lf);
     add(l);
+    Font lf1=new Font("Forte",Font.PLAIN,20);
 
     //initializing the buttons and adding actio listener
     b1=new JButton();
@@ -91,6 +92,7 @@ public class Gui extends JFrame implements ActionListener{
     A.setBounds(40,200,100,100);
     A.setIcon(new ImageIcon("ticx1.png"));
     lab1.setBounds(85,150,50,50);
+    lab1.setFont(lf1);
     add(lab1);
     add(A);
     }
@@ -99,6 +101,7 @@ public class Gui extends JFrame implements ActionListener{
     B=new JButton();
     B.setBounds(40,200,100,100);
     B.setIcon(new ImageIcon("tico1.png"));
+    lab2.setFont(lf1);
     add(B);
     lab2.setBounds(85,150,50,50);
     add(lab2);
