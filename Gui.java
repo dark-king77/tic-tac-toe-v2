@@ -4,6 +4,8 @@ import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.ImageIcon;
+import javax.sound.sampled.*;
+import java.io.File;
 
 public class Gui extends JFrame implements ActionListener{
     //declaring class members to keep track of the game status
@@ -43,50 +45,50 @@ public class Gui extends JFrame implements ActionListener{
         }
     //setting the JFrame properties
     setLayout(null);
-    setSize(800,2000);
+    setSize(750,820);
 
     //defining the constructor for the class to create and display the Jframe and initialize the buttons
     //setting up the title
-    JLabel l=new JLabel("TIC TAC TOE");
-    l.setBounds(500,50,190,50);
-    Font lf=new Font("Verdana",Font.PLAIN,28);
+    JLabel l=new JLabel("Tic Tac Toe");
+    l.setBounds(350,50,190,50);
+    Font lf=new Font("Forte",Font.PLAIN,42);
     l.setFont(lf);
     add(l);
 
     //initializing the buttons and adding actio listener
     b1=new JButton();
-    b1.setBounds(300,200,150,150);
+    b1.setBounds(230,200,150,150);
     b1.addActionListener(this);
     b2=new JButton();
-    b2.setBounds(450,200,150,150);
+    b2.setBounds(380,200,150,150);
     b2.addActionListener(this);
     b3=new JButton();
-    b3.setBounds(600,200,150,150);
+    b3.setBounds(530,200,150,150);
     b3.addActionListener(this);
     b4=new JButton();
-    b4.setBounds(300,350,150,150);
+    b4.setBounds(230,350,150,150);
     b4.addActionListener(this);
     b5=new JButton();
-    b5.setBounds(450,350,150,150);
+    b5.setBounds(380,350,150,150);
     b5.addActionListener(this);
     b6=new JButton();
-    b6.setBounds(600,350,150,150);
+    b6.setBounds(530,350,150,150);
     b6.addActionListener(this);
     b7=new JButton();
-    b7.setBounds(300,500,150,150);
+    b7.setBounds(230,500,150,150);
     b7.addActionListener(this);
     b8=new JButton();
-    b8.setBounds(450,500,150,150);
+    b8.setBounds(380,500,150,150);
     b8.addActionListener(this);
     b9=new JButton();
-    b9.setBounds(600,500,150,150);
+    b9.setBounds(530,500,150,150);
     b9.addActionListener(this);
 
     //setting game roles
     if(player==0){
     lab1=new JLabel("A");    
     A=new JButton();
-    A.setBounds(100,200,100,100);
+    A.setBounds(60,200,100,100);
     A.setIcon(new ImageIcon("ticx1.png"));
     lab1.setBounds(140,150,50,50);
     add(lab1);
@@ -95,7 +97,7 @@ public class Gui extends JFrame implements ActionListener{
     else{
     lab2=new JLabel("B");    
     B=new JButton();
-    B.setBounds(100,200,100,100);
+    B.setBounds(60,200,100,100);
     B.setIcon(new ImageIcon("tico1.png"));
     add(B);
     lab2.setBounds(140,150,50,50);
@@ -131,6 +133,7 @@ public class Gui extends JFrame implements ActionListener{
     }
     
     public void actionPerformed(ActionEvent info){
+        playClickSound();
         if(info.getSource()==b1 && bstate[0][0]==false && current_player==true){
             current_player=false;
             opponent.current_player=true;
@@ -230,22 +233,30 @@ public class Gui extends JFrame implements ActionListener{
             opponent.move++;
             player[2][2] = 1;
         }
+        
 
-
-
-
-
-
-
-
-        //
-        //
-        //
 game_status();
 }
+ private void playClickSound() {
+    try {
+        // Load the sound file
+        File soundFile = new File("button click.wav");
+        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(soundFile);
 
+        // Get a Clip instance
+        Clip clip = AudioSystem.getClip();
+
+        // Open the audio input stream
+        clip.open(audioInputStream);
+
+        // Start playing the clip
+        clip.start();
+    } catch (Exception ex) {
+        System.out.println("Error playing sound: " + ex.getMessage());
+    }
+ }
 //check game status
-void game_status(){
+void game_status() {
     if(checksum(player)==true)
     {
         new gameover(player_number);
