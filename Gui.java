@@ -127,6 +127,9 @@ public class Gui extends JFrame implements ActionListener{
     }
     }
     );
+    //Color lightBlue = new Color(173, 216, 230);
+    setBackground(Color.PINK);
+    //setVisible(true);
 
     //setting frame visibility
     setVisible(true);

@@ -4,6 +4,9 @@ import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.ImageIcon;
+import javax.sound.sampled.*;
+import java.io.File;
+
 
 class gameover extends JFrame
 {
@@ -36,6 +39,7 @@ class gameover extends JFrame
       b.setIcon(new ImageIcon("ticx1.png"));
       add(b);
       add(l1);
+      winClickSound();
     }
     else if(x==1)
     {
@@ -46,6 +50,7 @@ class gameover extends JFrame
       b.setIcon(new ImageIcon("tico1.png"));
       add(b);
       add(l2);
+      winClickSound();
     }
     else
     {
@@ -62,9 +67,46 @@ class gameover extends JFrame
       add(l);
       add(l1);
       add(l2);
+      playClickSound();
     }
     setSize(500,500);
     setLayout(null);
     setVisible(true);
+  }
+  private void playClickSound() {
+    try {
+        // Load the sound file
+        File soundFile = new File("match draw.wav");
+        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(soundFile);
+
+        // Get a Clip instance
+        Clip clip = AudioSystem.getClip();
+
+        // Open the audio input stream
+        clip.open(audioInputStream);
+
+        // Start playing the clip
+        clip.start();
+    } catch (Exception ex) {
+        System.out.println("Error playing sound: " + ex.getMessage());
+    }
+  }
+  private void winClickSound() {
+    try {
+        // Load the sound file
+        File soundFile = new File("win sound.wav");
+        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(soundFile);
+
+        // Get a Clip instance
+        Clip clip = AudioSystem.getClip();
+
+        // Open the audio input stream
+        clip.open(audioInputStream);
+
+        // Start playing the clip
+        clip.start();
+    } catch (Exception ex) {
+        System.out.println("Error playing sound: " + ex.getMessage());
+    }
   }
 }

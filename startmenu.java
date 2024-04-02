@@ -14,6 +14,8 @@ public class startmenu
     private Button startButton;
     //private Button musicButton;
     private Frame frame;
+    //private TextField text;
+    //private Label name;
 
     public startmenu() 
     {
@@ -23,22 +25,29 @@ public class startmenu
         frame.setLayout(null);
         //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        startButton = new Button("Start Game");
+        startButton = new Button("START");
         startButton.setBounds(400,450,150,50);
-        //startButton.addActionListener(this);
+        /*text = new TextField();
+        text.setBounds(310,350,300,40);
+        text.setFont(new Font("Arial", Font.PLAIN, 24));
+        name=new Label("Enter your name: ");
+        name.setBounds(310,300,300,40);
+        name.setFont(new Font("Kristen ITC",Font.BOLD,18));*/
+        startButton.setFont(new Font("Arial Black",Font.BOLD,28));
 
        // musicButton = new JButton("Toggle Music");
         //musicButton.addActionListener(this);
 
         
         frame.add(startButton);
-        //frame.add(musicButton);
+       /* frame.add(text);
+        frame.add(name); */
         startButton.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent e)
             {
                 startgame();
-
+                frame.dispose();
             }
         });
         frame.addWindowListener(new WindowAdapter()
