@@ -267,7 +267,7 @@ void game_status() {
     {
         new gameover(player_number);
     }
-    if(move == 9 && at_nineth_move==false){
+    else if(move == 9 && at_nineth_move==false){
       new gameover(3);
     }
 }
